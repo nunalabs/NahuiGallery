@@ -1,7 +1,7 @@
 'use client';
 
 import { useAccount, useChainId, useSwitchChain } from 'wagmi';
-import { andeTestnet } from '@/lib/wagmi';
+import { andeTestnet } from '@/lib/config';
 
 export function NetworkStatus() {
   const { isConnected } = useAccount();
