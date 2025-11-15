@@ -9,6 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // CSS Variable-based colors for dark mode support
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
         // NahuiGallery Brand Colors (inspired by Latin American art)
         primary: {
           50: '#fdf4f3',
@@ -22,6 +44,8 @@ const config: Config = {
           800: '#903225',
           900: '#782f25',
           950: '#41150f',
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
           50: '#f0f9ff',
@@ -35,6 +59,8 @@ const config: Config = {
           800: '#065986',
           900: '#0b4a6f',
           950: '#082f4a',
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         accent: {
           50: '#fffbeb',
@@ -48,11 +74,19 @@ const config: Config = {
           800: '#92400e',
           900: '#78350f',
           950: '#451a03',
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
       },
+      borderRadius: {
+        DEFAULT: 'var(--radius)',
+        lg: 'calc(var(--radius) + 2px)',
+        md: 'calc(var(--radius))',
+        sm: 'calc(var(--radius) - 2px)',
+      },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-clash-display)', 'system-ui', 'sans-serif'],
+        sans: ['system-ui', 'sans-serif'],
+        display: ['system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

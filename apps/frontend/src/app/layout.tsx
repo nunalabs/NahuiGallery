@@ -1,9 +1,6 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
 import { Providers } from './providers';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: 'NahuiGallery - Premium NFT Platform on ANDE Network',
@@ -19,6 +16,7 @@ export const metadata: Metadata = {
     'Blockchain',
   ],
   authors: [{ name: 'Nuna Labs', url: 'https://nunalabs.com' }],
+  metadataBase: new URL('https://nahuigallery.art'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -43,17 +41,18 @@ export const metadata: Metadata = {
     description: 'Premium NFT platform on ANDE Network',
     images: ['/twitter-image.png'],
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
-      <body className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <html lang="en">
+      <body className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 font-sans">
         <Providers>{children}</Providers>
       </body>
     </html>
