@@ -1,5 +1,5 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
-import { parseEther, formatEther, type Address } from 'viem';
+import { formatEther, type Address } from 'viem';
 
 // NFT Contract ABI (minimal for now, will be generated from TypeChain)
 const NFT_ABI = [
